@@ -37,9 +37,11 @@ try {
     /**
      * Handle the request
      */
-    $application = new \Phalcon\Mvc\Application($di);
+    $app = new \Phalcon\Mvc\Micro($di);
 
-    echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
+    include APP_PATH . '/app.php';
+    $app->handle();
+    //echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
 
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';
