@@ -1,0 +1,6 @@
+vendor/
+composer.lock
+.idea/
+app/views/index.phtml
+app/views/index/index.phtml
+app/config/config.ini
