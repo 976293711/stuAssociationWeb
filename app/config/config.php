@@ -26,7 +26,7 @@ $appConfig = new \Phalcon\Config([
     ]
 ]);
 
-$config = new \Phalcon\Config\Adapter\Ini(APP_PATH . "/config/config.ini");
+$config = new \Phalcon\Config\Adapter\Ini(APP_PATH . "/config/param.ini");
 
 $config->merge($appConfig);
 return $config;

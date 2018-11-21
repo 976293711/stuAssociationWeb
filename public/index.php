@@ -38,7 +38,6 @@ try {
      * Handle the request
      */
     $app = new \Phalcon\Mvc\Micro($di);
-
     include APP_PATH . '/app.php';
     $app->handle();
     //echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
