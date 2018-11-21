@@ -1,0 +1,9 @@
+{
+  "require": {
+    "hprose/hprose": "^2.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "phalcon/incubator": "^3.2",
+    "symfony/var-dumper": "^4.1",
+    "phalcon/devtools": "dev-master"
+  }
+}
