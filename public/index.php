@@ -1,7 +1,15 @@
 <?php
 use Phalcon\Di\FactoryDefault;
-
+date_default_timezone_set('PRC');
 error_reporting(E_ALL);
+
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    $origin = $_SERVER['HTTP_ORIGIN'];
+    header("Access-Control-Allow-Origin: $origin");
+    header("Access-Control-Allow-Headers: origin, x-requested-with, content-type, X-XSRF-TOKEN");
+    header("Access-Control-Allow-Credentials: true");
+    header("Access-Control-Allow-Methods: PUT, GET, POST, OPTIONS");
+}
 
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
