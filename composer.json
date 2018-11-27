@@ -6,5 +6,8 @@
     "symfony/var-dumper": "^4.1",
     "phalcon/devtools": "dev-master",
     "overtrue/wechat": "~4.0"
+  },
+  "require-dev": {
+    "snowair/phalcon-debugbar": "^1.2"
   }
 }

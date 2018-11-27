@@ -11,22 +11,22 @@ class ControllerBase extends Controller
 
     public function onConstruct()
     {
-        $request = $this->request;
-
-        $header = $request->getHeader('authorization');
-
-        if(!empty($header)) {
-            $token = trim(preg_replace('/^(?:\s+)?Bearer\s/', '', $header));
-            $apiKey = @$this->getDI()->get('config')->env->api_key;
-            if (!empty($apiKey) && !empty($token)) {
-                if (hash_equals($token, $apiKey)) {
-                    return;
-                }
-            }else{
-                return $this->failResponse("auth 校验失败");
-            }
-        }
-        return $this->failResponse("auth 校验失败");
+//        $request = $this->request;
+//
+//        $header = $request->getHeader('authorization');
+//
+//        if(!empty($header)) {
+//            $token = trim(preg_replace('/^(?:\s+)?Bearer\s/', '', $header));
+//            $apiKey = @$this->getDI()->get('config')->env->api_key;
+//            if (!empty($apiKey) && !empty($token)) {
+//                if (hash_equals($token, $apiKey)) {
+//                    return;
+//                }
+//            }else{
+//                return $this->failResponse("auth 校验失败");
+//            }
+//        }
+//        return $this->failResponse("auth 校验失败");
     }
 
     public function responseJson($data)

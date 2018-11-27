@@ -1,4 +1,5 @@
 <?php
+require_once '../vendor/autoload.php';
 use Phalcon\Di\FactoryDefault;
 date_default_timezone_set('PRC');
 error_reporting(E_ALL);
@@ -46,6 +47,11 @@ try {
      * Handle the request
      */
     $app = new \Phalcon\Mvc\Micro($di);
+    $di['app'] = $app;
+    $provider = new Snowair\Debugbar\ServiceProvider('../app/config/debugbar.php');
+
+    $provider->register();//注册
+    $provider->boot(); //启动
     include APP_PATH . '/app.php';
     $app->handle();
     //echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
